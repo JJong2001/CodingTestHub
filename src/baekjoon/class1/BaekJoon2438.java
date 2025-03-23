@@ -10,6 +10,8 @@ import java.io.IOException;
  * 첫째 줄에 N(1 ≤ N ≤ 100)이 주어진다.
  */
 public class BaekJoon2438 {
+    private static final int ASCII_INPUT = 32;
+
     public static void main(String[] args) {
         int length = readInt();
         StringBuilder sb = new StringBuilder();
@@ -27,7 +29,7 @@ public class BaekJoon2438 {
     public static int readInt() {
         int c, n = 0;
         try {
-            while ((c = System.in.read()) > 32) {
+            while ((c = System.in.read()) > ASCII_INPUT) {
                 n = (n << 3) + (n << 1) + (c & 15);
             }
         } catch (IOException ignored) {}

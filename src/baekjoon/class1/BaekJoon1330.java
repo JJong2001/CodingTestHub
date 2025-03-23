@@ -13,6 +13,8 @@ import java.io.IOException;
  * -10,000 ≤ A, B ≤ 10,000
  */
 public class BaekJoon1330 {
+    private static final int ASCII_INPUT = 32;
+
     public static void main(String[] args) {
         System.out.println(getResult(readInt(), readInt()));
     }
@@ -31,7 +33,7 @@ public class BaekJoon1330 {
             if (c == 13) isMinus = true;
             else n = c;
 
-            while ((c = System.in.read()) > 32) {
+            while ((c = System.in.read()) > ASCII_INPUT) {
                 n = (n << 3) + (n << 1) + (c & 15);
             }
         } catch (IOException ignored) {}
