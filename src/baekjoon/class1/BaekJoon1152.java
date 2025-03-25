@@ -16,19 +16,19 @@ public class BaekJoon1152 {
     private static final int ASCII_SPACE = 32;
 
     public static void main(String[] args) {
-        int c;
-        int wordCheck = ASCII_SPACE;
+        int inputAsciiCode;
+        int prevAsciiCode = ASCII_SPACE;
         int wordCount = 0;
 
         try {
-            while ((c = System.in.read()) != ASCII_ENTER)
+            while ((inputAsciiCode = System.in.read()) != ASCII_ENTER)
             {
-                if (c == ASCII_SPACE && wordCheck != ASCII_SPACE) wordCount++;
-                wordCheck = c;
+                if (inputAsciiCode == ASCII_SPACE && prevAsciiCode != ASCII_SPACE) wordCount++;
+                prevAsciiCode = inputAsciiCode;
             }
-            if (wordCheck != ASCII_SPACE) wordCount++;
         } catch (IOException ignored) {}
 
+        if (prevAsciiCode != ASCII_SPACE) wordCount++;
         System.out.println(wordCount);
     }
 }
