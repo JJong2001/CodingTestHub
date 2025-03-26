@@ -14,20 +14,28 @@ import java.io.IOException;
  */
 public class BaekJoon2920 {
     private static final int ASCII_INPUT = 32;
+    private static final int SIZE = 8;
 
     public static void main(String[] args) {
-        int size = 8;
-        int order = 0;
-        for (int i = 1; i <= size; i++) {
-            int num = readInt();
-            if (num == i) order++;
-            else if (num - 1 == size - i) order--;
+        String answer = "mixed";
+        boolean isSort = true;
+        int num = readInt();
+        if (num == 1) {
+            for (int i = 2; i <= SIZE; i++) {
+                if (readInt() != i) isSort = false;
+            }
+
+            if (isSort) answer = "ascending";
+        }
+        if (num == SIZE) {
+            for (int i = SIZE - 1; i >= 1; i--) {
+                if (readInt() != i) isSort = false;
+            }
+
+            if (isSort) answer = "descending";
         }
 
-        System.out.println(
-                order == size ? "ascending" :
-                order == -size ? "descending" : "mixed"
-        );
+        System.out.println(answer);
     }
 
     private static int readInt() {
