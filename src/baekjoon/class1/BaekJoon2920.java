@@ -16,25 +16,18 @@ public class BaekJoon2920 {
     private static final int ASCII_INPUT = 32;
 
     public static void main(String[] args) {
-        String answer = "mixed";
-        boolean isSort = true;
-        int num = readInt();
-        if (num == 1) {
-            for (int i = 2; i <= 8; i++) {
-                if (readInt() != i) isSort = false;
-            }
-
-            if (isSort) answer = "ascending";
-        }
-        if (num == 8) {
-            for (int i = 7; i >= 1; i--) {
-                if (readInt() != i) isSort = false;
-            }
-
-            if (isSort) answer = "descending";
+        int size = 8;
+        int order = 0;
+        for (int i = 1; i <= size; i++) {
+            int num = readInt();
+            if (num == i) order++;
+            else if (num - 1 == size - i) order--;
         }
 
-        System.out.println(answer);
+        System.out.println(
+                order == size ? "ascending" :
+                order == -size ? "descending" : "mixed"
+        );
     }
 
     private static int readInt() {
