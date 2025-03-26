@@ -23,13 +23,13 @@ public class BaekJoon2675 {
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < testCase; i++) {
-            int length = readInt();
-            if (length < 1 || length > 8) return;
+            int repeat = readInt();
+            if (repeat < 1 || repeat > 8) return;
 
             char c;
             try {
                 while ((c = (char) System.in.read()) != ASCII_ENTER) {
-                    for (int j = 0; j < length; j++) sb.append(c);
+                    for (int j = 0; j < repeat; j++) sb.append(c);
                 }
             } catch (IOException ignored) {}
             sb.append('\n');
