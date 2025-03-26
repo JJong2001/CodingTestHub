@@ -20,19 +20,19 @@ public class BaekJoon8958 {
         int testCase = readInt();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < testCase; i++) {
-            int score = 0;
-            int plusScore = 1;
+            int totalScore = 0;
+            int score = 1;
 
             char c;
             while ((c = (char) System.in.read()) != ASCII_ENTER) {
                 if (c == 'O') {
-                    score += plusScore;
-                    plusScore++;
+                    totalScore += score;
+                    score++;
                 }
-                else plusScore = 1;
+                else score = 1;
             }
 
-            sb.append(score).append('\n');
+            sb.append(totalScore).append('\n');
         }
 
         System.out.println(sb);
