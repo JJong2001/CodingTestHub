@@ -14,16 +14,17 @@ import java.io.IOException;
 public class BaekJoon10952 {
     public static void main(String[] args) throws IOException {
         StringBuilder sb = new StringBuilder();
-        int num1, num2;
-        do {
-            num1 = System.in.read() & 15;
+        while (true)
+        {
+            int num1 = System.in.read() & 15;
             int space = System.in.read();
-            num2 = System.in.read() & 15;
+            int num2 = System.in.read() & 15;
             int enter = System.in.read();
 
+            if (num1 + num2 == 0) break;
             sb.append(num1 + num2).append('\n');
-        } while (num1 != 0 && num2 != 0);
+        }
 
-        System.out.println(sb.substring(0, sb.length() - 3));
+        System.out.println(sb);
     }
 }
