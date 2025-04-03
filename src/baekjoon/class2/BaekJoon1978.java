@@ -9,23 +9,27 @@ public class BaekJoon1978 {
     private static final int ASCII_INPUT = 32;
 
     public static void main(String[] args) {
-        int numberCount = readInt();
-        int primeCount = 0;
-        for (int i = 0; i < numberCount; i++)
+        int loop = readInt();
+        int primeCount = loop;
+        while (loop-- > 0)
         {
             int number = readInt();
-            if (isPrime(number)) primeCount++;
+            if (number == 1)
+            {
+                primeCount--;
+                continue;
+            }
+
+            for (int i = 2; i < number; i++)
+            {
+                if (number % i == 0) {
+                    primeCount--;
+                    break;
+                }
+            }
         }
 
         System.out.println(primeCount);
-    }
-
-    private static boolean isPrime(int number) {
-        if (number == 1) return false;
-        for (int i = 2; i < number; i++) {
-            if (number % i == 0) return false;
-        }
-        return true;
     }
 
     private static int readInt() {
