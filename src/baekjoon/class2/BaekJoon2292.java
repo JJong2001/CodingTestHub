@@ -9,11 +9,10 @@ public class BaekJoon2292 {
     private static final int ASCII_ENTER = 10;
 
     public static void main(String[] args) {
-        int number = readInt();
         int move = 1;
-        while (number > 1)
+        for (int room = readInt(); room > 1; move++)
         {
-            number -= 6 * move++;
+            room -= 6 * move;
         }
 
         System.out.println(move);
