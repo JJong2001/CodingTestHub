@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * https://www.acmicpc.net/problem/28702
  */
-public class BaekJoon28702 {
+public class BaekJoon28702_1 {
     private static final int ASCII_ENTER = 10;
 
     public static void main(String[] args) throws IOException {
