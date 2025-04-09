@@ -2,21 +2,28 @@ package baekjoon.class2;
 
 import java.io.IOException;
 
-/**
- * https://www.acmicpc.net/problem/1436
- */
-public class BaekJoon1436 {
+public class BaekJoon1436_2 {
     private static final int ASCII_ENTER = 10;
 
     public static void main(String[] args) {
         int series = readInt();
-        int number = 666, count = 1;
+        int title = 666, count = 1;
         while (series != count)
         {
-            if (String.valueOf(++number).contains("666")) count++;
+            if (has666(++title)) count++;
         }
 
-        System.out.println(number);
+        System.out.println(title);
+    }
+
+    private static boolean has666(int number) {
+        while (number >= 666)
+        {
+            if (number % 1000 == 666) return true;
+            number /= 10;
+        }
+
+        return false;
     }
 
     private static int readInt() {
